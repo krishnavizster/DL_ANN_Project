@@ -1,3 +1,22 @@
 params:
   test: testkeyword 
-  
+  epochs:30
+  batch_size:32
+  no_classes:10
+  #input_shape: [28,28]
+  loss_functions: sparse_categorical_crossentropy
+  metrics: accuracy
+  optimizer:SGD
+
+
+
+artifacts:
+  artifacts_dir: artifacts
+  model_dr:model
+  plots_dir: plots
+  checkpoints_dir: checkpoints
+
+logs:
+  logs_dir: logs_dir
+  general_logs_dir: general_logs
+  tensorboard_logs: tensorboard_logs

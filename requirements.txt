@@ -2,7 +2,9 @@ tensorflow
 matplotlib
 seaborn 
 numpy 
-pandas 
+pandas
+PyYAML
+ 
 
 
 #local package installation 
