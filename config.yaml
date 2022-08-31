@@ -7,6 +7,8 @@ params:
   loss_functions: sparse_categorical_crossentropy
   metrics: accuracy
   optimizer:SGD
+  validation_datasize:5000
+  
 
 
 
