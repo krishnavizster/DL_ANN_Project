@@ -1,6 +1,8 @@
+
 from src.utils.common import read_config
 from src.utils.data_mgmt import get_data
 import argparse
+from src.utils.model import create_model
 
 
 def training_(config_path):
@@ -10,8 +12,14 @@ def training_(config_path):
     (X_train,y_train),(X_valid,y_valid),(X_test,y_test)=get_data(validation_datasize)
 
 
+    LOSS_FUNCTION=config["params"]["loss_function"]
+    OPTIMIZER=config["params"]["optimizer"]
+    METRICS=config["params"]["metrics"]
+    NUM_CLASSES=config["params"]["num_classes"]
 
     print(config)
+
+    model=create_model( LOSS_FUNCTION,OPTIMIZER, METRICS,NUM_CLASSES )
 
 if __name__ == '__main__':
     args =argparse.ArgumentParser()
@@ -20,4 +28,4 @@ if __name__ == '__main__':
 
     parsed_args=args.parse_args()
 
-    training(config_path=parsed_args.config) 
+training(config_path=parsed_args.config) 
