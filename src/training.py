@@ -1,9 +1,13 @@
 import os
 from src.utils.common import read_config
 from src.utils.data_mgmt import get_data
-from src.utils.model import create_model, save_model,save_plot
+from src.utils.model import create_model
 from src.utils.callbacks import get_callbacks
+from src.utils.model import create_model, save_model
+from src.utils.save_plot import save_plot
 import argparse
+import pandas as pd
+
 
 def training(config_path):
     config = read_config(config_path)
@@ -36,17 +40,18 @@ def training(config_path):
     model_dir_path = os.path.join(artifacts_dir, model_dir)
     os.makedirs(model_dir_path, exist_ok=True)
     
-    plot_dir_path = os.path.join(artifacts_dir, plot_dir)
-    os.makedirs(plot_dir_path, exist_ok=True)
+    #plot_dir_path = os.path.join(artifacts_dir, plot_dir)
+    #os.makedirs(plot_dir_path, exist_ok=True)
 
-    plot_name = os.path.join(artifacts_dir,plot_name)
-    os.makedirs(plot_name, exist_ok=True)
+    #plot_name = os.path.join(artifacts_dir,plot_name)
+    #os.makedirs(plot_name, exist_ok=True)
 
 
     model_name = config["artifacts"]["model_name"]
 
     save_model(model, model_name, model_dir_path)
-    save_plot(history, plot_name, plot_dir_path)
+    #save_plot(df,plot_name,plot_dir)
+    save_plot(pd.DataFrame(history.history), plot_name, plot_dir)
 
 
 if __name__ == '__main__':
