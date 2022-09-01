@@ -9,6 +9,8 @@ conda create --prefix ./envs python=3.7 -y
 
 #To activate environment 
 conda activate ./envs
+or 
+source activate ./envs
 
 #To check list of environment
 conda env list
