@@ -13,10 +13,14 @@ params:
 
 
 artifacts:
+
   artifacts_dir: artifacts
-  model_dr:model
+  model_dir: model
   plots_dir: plots
-  checkpoints_dir: checkpoints
+  
+  CHECKPOINT_DIR: checkpoints
+  
+
 
 logs:
   logs_dir: logs_dir
