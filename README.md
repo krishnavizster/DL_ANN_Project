@@ -40,3 +40,6 @@ touch src/training.py
 
 #to cretae files 
 touch src/utils/model.py src/utils/data_mgmt.py src/utils/common.py
+
+#to run the model 
+python src/training.py
